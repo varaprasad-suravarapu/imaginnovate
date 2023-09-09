@@ -28,8 +28,9 @@ function App() {
       .then((res) => res.json())
       .then((result) => { 
         const daywiselist = dateFilter(result)
-        console.log(daywiselist )
+        
         const daywise = fiveDaysData(daywiselist)
+        daywise.pop()
         setWeather(daywise);
     });
     }
@@ -55,7 +56,6 @@ function App() {
   };
 
   const dateFilter = (data) => {
-   
     let listofdays= []
     data.list.forEach((item => {
          let dt = item.dt_txt.split(" ")[0];
@@ -64,7 +64,8 @@ function App() {
       }
       listofdays[dt].push(item)  
   }))
-  console.log(listofdays.slice(0, 1))
+  console.log(listofdays)
+  
     return listofdays
   }
 
