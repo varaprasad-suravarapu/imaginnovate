@@ -15,7 +15,6 @@ body {
 }
 
 .search {
-  /* width: 800px; */
   margin: 0 auto
 }
 
@@ -46,11 +45,6 @@ th, td {
   background: #bbb;
 }
 
-table table {
-  width: 100%;
-  margin: 0;
-}
-
 table table tr:nth-child(3) td, table table tr:nth-child(4) td{
   background-color: #fff !important;
 }
@@ -59,22 +53,28 @@ table table tr:nth-child(3) td, table table tr:nth-child(4) td{
 .date {
   background-color: orangered;
   color: white;
+  padding: 10px 0
 }
 
 .tableData {
   width: 100%;
   margin: 50px auto;
+  display: flex;
+  justify-content: center;
+
 }
 
 @media (max-width: 768px) {
   .tableData {
-    width: 100%;
+    flex-direction: column;
   }
   table {
     width: 100% !important;
     float: none !important;
     margin: 10px 0
   }
+
+  table table{ margin: 0}
 
   button {
     margin-top: 10px !important;
